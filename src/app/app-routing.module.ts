@@ -6,10 +6,10 @@ import { ContactPageComponent } from './shared/pages/contact-page/contact-page.c
 import { CountriesRoutingModule } from './countries/countries-routing.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomePageComponent
-  },
+  //{
+  //  path: '',
+  //  component: HomePageComponent
+  //},
   {
     path: 'about',
     component: AboutPageComponent
@@ -20,12 +20,11 @@ const routes: Routes = [
   },
   {
     path: 'countries',
-    loadChildren: () => import('./countries/countries.module').then ( m => m.CountriesModule )
-    //loadChildren: () => import('./countries/countries.module').then( m => m.CountriesModule )
+    loadChildren: () => import('./countries/countries.module').then( m => m.CountriesModule )
   },
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'countries'
   }
 ]
 
